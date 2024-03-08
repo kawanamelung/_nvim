@@ -1,5 +1,13 @@
+-- Oil at workspace directory
 vim.keymap.set('n', '<leader>f', function()
   require('oil').open '.'
+  vim.opt.colorcolumn = ''
+end, { desc = 'toggle oil tree' })
+
+vim.keymap.set('n', '<leader>F', function()
+  local current_file = vim.fn.expand '%:p' -- Get the full path of the current file
+  local current_dir = vim.fn.fnamemodify(current_file, ':h') -- Get the directory of the current file
+  require('oil').open(current_dir)
   vim.opt.colorcolumn = ''
 end, { desc = 'toggle oil tree' })
 

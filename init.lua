@@ -1,12 +1,12 @@
 -----------------------------------------------------------------------------
--- IDEAS AND TODOS
+-- TODO:
 ------------------------------------------------------------------------------
 -- add spell check
 -- repeating recordings
 -- and ]m ]] ]M etc.
 -- paste over text but keep paste -> registers?
 -- "danymat/neogen" for doc generation
--- add lazy git
+-- fix virtual text colors to red
 -------------------------------------------------------------------------------
 
 vim.g.mapleader = ' '

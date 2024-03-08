@@ -18,7 +18,24 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Use `opts = {}` to force a plugin to be loaded.
 require('lazy').setup({
+
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+
+  {
+    'sainnhe/sonokai',
+    config = function()
+      vim.cmd.colorscheme 'sonokai'
+    end,
+  },
+
+  {
+    'akinsho/bufferline.nvim',
+    version = '*',
+    dependencies = 'nvim-tree/nvim-web-devicons',
+    config = function()
+      require('bufferline').setup {}
+    end,
+  },
 
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} }, -- Use `opts = {}` to force a plugin to be loaded.
@@ -56,7 +73,7 @@ require('lazy').setup({
 
   require 'plugins/cmp',
 
-  require 'plugins/tokyonight',
+  -- require 'plugins/tokyonight',
 
   require 'plugins/todo-comments',
 
