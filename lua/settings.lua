@@ -57,4 +57,13 @@ vim.opt.scrolloff = 10
 -- Hghlighting vertical separators
 vim.wo.winhighlight = true
 
+-- column line only for python files
+vim.api.nvim_create_autocmd(
+  'BufWinEnter',{
+    pattern = '*.py',
+    callback = function()
+      vim.wo.colorcolumn = '80,72'
+    end,
+  }
+)
 -- vim: ts=2 sts=2 sw=2 et

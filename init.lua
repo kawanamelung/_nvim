@@ -9,6 +9,7 @@
 -- check the byfwritepre autocmd
 -- How to disbale the lsp float (left side bar and right float)
 -- nvim lir
+-- "danymat/neogen" for doc generation
 -------------------------------------------------------------------------------
 
 vim.g.mapleader = " "
