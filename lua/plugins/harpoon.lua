@@ -1,6 +1,6 @@
 return{
   {
-  "ThePrimeagen/harpoon",
+  'ThePrimeagen/harpoon',
   config = function ()
     require("telescope").load_extension('harpoon')
     vim.keymap.set("n", "<leader>a", require("harpoon.mark").add_file, { desc = 'add file to harpoon' })

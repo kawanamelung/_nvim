@@ -6,12 +6,12 @@ vim.keymap.set('i', 'jk', '<esc>', { desc = 'quick [esc]ape'})
 vim.keymap.set('i', 'kj', '<esc>', { desc = 'quick [esc]ape'})
 
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 
--- insert line in normal mode
-vim.api.nvim_set_keymap('n', '<leader>o', ':normal! o<CR>', { noremap = true, silent = true , desc = 'insert line below'})
-vim.api.nvim_set_keymap('n', '<leader>O', ':normal! O<CR>', { noremap = true, silent = true , desc = 'insert line above'})
+-- redo
+vim.keymap.set('n', 'U', '<C-r>')
 
 -- next with cursor centering
 vim.keymap.set('n', 'n', 'nzz')
@@ -20,6 +20,13 @@ vim.keymap.set('n', 'N', 'Nzz')
 -- page navigation with centering
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
+
+-- insert line in normal mode
+vim.api.nvim_set_keymap('n', '<leader>o', ':normal! o<CR>', { noremap = true, silent = true , desc = 'insert line below'})
+vim.api.nvim_set_keymap('n', '<leader>O', ':normal! O<CR>', { noremap = true, silent = true , desc = 'insert line above'})
+
+-- substitute word under cursor with confirmation (y/n)
+vim.keymap.set('n', '<leader>rc', [[:%s/\<<C-r><C-w>\>//gc<Left><Left><Left>]], { desc = '[R]ename with [C]onfirmation.'})
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })

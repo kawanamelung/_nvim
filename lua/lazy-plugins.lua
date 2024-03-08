@@ -37,6 +37,9 @@ require("lazy").setup({
 	-- file swapping
 	require("plugins/harpoon"),
 
+  -- outline view
+  require("plugins.aerial"),
+
 	-- vim-like file tree for navigation and editing
 	require("plugins/oil"),
 
