@@ -5,7 +5,8 @@
 vim.opt.relativenumber = true
 
 -- Insert 4 spaces with tab
-vim.opt.shiftwidth=4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -58,12 +59,10 @@ vim.opt.scrolloff = 10
 vim.wo.winhighlight = true
 
 -- column line only for python files
-vim.api.nvim_create_autocmd(
-  'BufWinEnter',{
-    pattern = '*.py',
-    callback = function()
-      vim.wo.colorcolumn = '80,72'
-    end,
-  }
-)
+vim.api.nvim_create_autocmd('BufWinEnter', {
+  pattern = '*.py',
+  callback = function()
+    vim.wo.colorcolumn = '80,72'
+  end,
+})
 -- vim: ts=2 sts=2 sw=2 et
