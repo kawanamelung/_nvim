@@ -1,29 +1,31 @@
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
+-- quick escape
+vim.keymap.set('i', 'jk', '<esc>', { desc = 'quick [esc]ape'})
+vim.keymap.set('i', 'kj', '<esc>', { desc = 'quick [esc]ape'})
+
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+-- insert line in normal mode
+vim.api.nvim_set_keymap('n', '<leader>o', ':normal! o<CR>', { noremap = true, silent = true , desc = 'insert line below'})
+vim.api.nvim_set_keymap('n', '<leader>O', ':normal! O<CR>', { noremap = true, silent = true , desc = 'insert line above'})
+
+-- next with cursor centering
+vim.keymap.set('n', 'n', 'nzz')
+vim.keymap.set('n', 'N', 'Nzz')
+
+-- page navigation with centering
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
-
--- ThePrimeagen Harpoon for file toggling
-require("telescope").load_extension('harpoon')
-local mark = require("harpoon.mark")
-local ui = require("harpoon.ui")
-vim.keymap.set("n", "<leader>a", mark.add_file, { desc = 'add file to harpoon' })
-vim.keymap.set("n", "<leader>h", ui.toggle_quick_menu, { desc = 'show harpoon list' })
-vim.keymap.set("n", "<leader>1", function() ui.nav_file(1) end, { desc = 'navigate to harpoon file 1' })
-vim.keymap.set("n", "<leader>2", function() ui.nav_file(2) end, { desc = 'navigate to harpoon file 2' })
-vim.keymap.set("n", "<leader>3", function() ui.nav_file(3) end, { desc = 'navigate to harpoon file 3' })
-vim.keymap.set("n", "<leader>4", function() ui.nav_file(4) end, { desc = 'navigate to harpoon file 4' })
-vim.keymap.set("n", "<leader>5", function() ui.nav_file(5) end, { desc = 'navigate to harpoon file 5' })
-vim.keymap.set("n", "<leader>6", function() ui.nav_file(6) end, { desc = 'navigate to harpoon file 6' })
-vim.keymap.set("n", "<leader>7", function() ui.nav_file(7) end, { desc = 'navigate to harpoon file 7' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which

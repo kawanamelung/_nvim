@@ -20,8 +20,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
 
-	-- file swapping
-	{ "ThePrimeagen/harpoon" },
 
 	-- "gc" to comment visual regions/lines
 	{ "numToStr/Comment.nvim", opts = {} }, -- Use `opts = {}` to force a plugin to be loaded.
@@ -35,6 +33,9 @@ require("lazy").setup({
 			},
 		},
 	},
+
+	-- file swapping
+	require("plugins/harpoon"),
 
 	-- vim-like file tree for navigation and editing
 	require("plugins/oil"),
