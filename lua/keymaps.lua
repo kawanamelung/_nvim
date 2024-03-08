@@ -11,6 +11,20 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagn
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
+-- ThePrimeagen Harpoon for file toggling
+require("telescope").load_extension('harpoon')
+local mark = require("harpoon.mark")
+local ui = require("harpoon.ui")
+vim.keymap.set("n", "<leader>a", mark.add_file, { desc = 'add file to harpoon' })
+vim.keymap.set("n", "<leader>h", ui.toggle_quick_menu, { desc = 'show harpoon list' })
+vim.keymap.set("n", "<leader>1", function() ui.nav_file(1) end, { desc = 'navigate to harpoon file 1' })
+vim.keymap.set("n", "<leader>2", function() ui.nav_file(2) end, { desc = 'navigate to harpoon file 2' })
+vim.keymap.set("n", "<leader>3", function() ui.nav_file(3) end, { desc = 'navigate to harpoon file 3' })
+vim.keymap.set("n", "<leader>4", function() ui.nav_file(4) end, { desc = 'navigate to harpoon file 4' })
+vim.keymap.set("n", "<leader>5", function() ui.nav_file(5) end, { desc = 'navigate to harpoon file 5' })
+vim.keymap.set("n", "<leader>6", function() ui.nav_file(6) end, { desc = 'navigate to harpoon file 6' })
+vim.keymap.set("n", "<leader>7", function() ui.nav_file(7) end, { desc = 'navigate to harpoon file 7' })
+
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
@@ -20,10 +34,10 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- TIP: Disable arrow keys in normal mode
--- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
--- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
--- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
--- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
+vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
+vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
+vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
+vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
