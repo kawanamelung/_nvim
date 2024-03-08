@@ -41,6 +41,16 @@ vim.keymap.set('n', '<leader>L', function()
   vim.cmd 'DiagnosticsToggle'
 end, { silent = true, desc = 'hide line numbers' })
 
+-- lazygit
+vim.keymap.set('n', 'lg', function()
+  vim.cmd 'LazyGit'
+end, { desc = 'open LazyGit' })
+
+-- lazygit but with leader
+vim.keymap.set('n', '<leader>lg', function()
+  vim.cmd 'LazyGit'
+end, { desc = 'open LazyGit' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
