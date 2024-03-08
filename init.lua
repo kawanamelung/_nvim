@@ -5,11 +5,8 @@
 -- repeating recordings
 -- and ]m ]] ]M etc.
 -- paste over text but keep paste -> registers?
--- fix TODO highlighting -> check highlight groups
--- check the byfwritepre autocmd
--- How to disbale the lsp float (left side bar and right float)
--- nvim lir
 -- "danymat/neogen" for doc generation
+-- add lazy git
 -------------------------------------------------------------------------------
 
 vim.g.mapleader = " "
