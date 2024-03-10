@@ -1,12 +1,11 @@
 -----------------------------------------------------------------------------
 -- TODO:
 ------------------------------------------------------------------------------
--- add spell check
 -- repeating recordings
 -- and ]m ]] ]M etc.
--- paste over text but keep paste -> registers?
 -- "danymat/neogen" for doc generation
--- fix virtual text colors to red
+-- jupyter_ascending/jupynium.nvim/quarto-nvim
+-- nvim.substitute
 -------------------------------------------------------------------------------
 
 vim.g.mapleader = ' '
@@ -15,7 +14,7 @@ vim.g.maplocalleader = ' '
 -- Set to true if you have a Nerd Font installed
 vim.g.have_nerd_font = true
 
--- [[ Vim settings ]]
+-- [[ Vim Settings ]]
 require 'settings'
 
 -- [[ Basic Keymaps ]]
