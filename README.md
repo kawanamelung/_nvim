@@ -1,4 +1,4 @@
-# kickstart-modular.nvim
+# An nvim config from the gods for mere mortals
 
 ## Introduction
 
