@@ -12,6 +12,15 @@ return {
         auto_install = true,
         highlight = { enable = true },
         indent = { enable = true },
+        -- Pressing <CR> selects the current word and increases the selection to the parent Treesitter node.
+        incremental_selection = {
+          enable = true,
+          keymaps = {
+            init_selection = '<CR>',
+            node_incremental = '<CR>',
+            node_decremental = '<BS>',
+          },
+        },
       }
 
       -- There are additional nvim-treesitter modules that you can use to interact

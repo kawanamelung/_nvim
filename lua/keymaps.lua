@@ -5,13 +5,28 @@
 vim.keymap.set('i', 'jk', '<esc>', { desc = 'quick [esc]ape' })
 vim.keymap.set('i', 'kj', '<esc>', { desc = 'quick [esc]ape' })
 
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+-- beginning and end of line navigation
 
--- Set highlight on search, but clear on pressing <Esc> in normal mode
-vim.opt.hlsearch = true
+vim.keymap.set('n', 'H', '^', { desc = 'first character in a line' })
+vim.keymap.set('n', 'L', '$', { desc = 'last character in a line' })
+
+-- toggle spell check
+-- :set spell – Turn on spell checking
+-- :set nospell – Turn off spell checking
+vim.keymap.set('n', '<leader>ss', ':set spell!<CR>', { noremap = true, silent = true })
+-- ]s – Jump to the next misspelled word
+-- [s – Jump to the previous misspelled word
+-- z= – Bring up the suggested replacements
+-- zg – Good word: Add the word under the cursor to the dictionary
+-- zw – Woops! Undo and remove the word from the dictionary
+
+-- remove search highlight
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- redo
 vim.keymap.set('n', 'U', '<C-r>')
+
+vim.keymap.set('x', '<leader>p', [["_dP]])
 
 -- next with cursor centering
 vim.keymap.set('n', 'n', 'nzz')
@@ -22,8 +37,11 @@ vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
 -- insert line in normal mode
-vim.api.nvim_set_keymap('n', '<leader>o', ':normal! o<CR>', { noremap = true, silent = true, desc = 'insert line below' })
-vim.api.nvim_set_keymap('n', '<leader>O', ':normal! O<CR>', { noremap = true, silent = true, desc = 'insert line above' })
+vim.keymap.set('n', '<leader>o', ':normal! o<CR>', { noremap = true, silent = true, desc = 'insert line below' })
+vim.keymap.set('n', '<leader>O', ':normal! O<CR>', { noremap = true, silent = true, desc = 'insert line above' })
+
+-- change after equal sign on line
+vim.keymap.set('n', 'd=', '<Esc>:normal! 0f=ld$<CR>a ', { silent = true, desc = 'change after first equal sign' })
 
 -- substitute word under cursor with confirmation (y/n)
 vim.keymap.set('n', '<leader>rc', [[:%s/\<<C-r><C-w>\>//gc<Left><Left><Left>]], { desc = '[R]ename with [C]onfirmation.' })
@@ -31,7 +49,7 @@ vim.keymap.set('n', '<leader>rc', [[:%s/\<<C-r><C-w>\>//gc<Left><Left><Left>]], 
 -- go back to previous buffer
 vim.keymap.set('n', '<leader>j', '<C-^>', { desc = 'toggle buffers', silent = true })
 
--- Diagnostic keymaps
+-- Diagnostic keymap*
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
