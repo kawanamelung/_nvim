@@ -2,13 +2,13 @@
 
 ## Introduction
 
-*This is a fork of [nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) that moves from a single file to a multi file configuration.*
-*And a further fork of [dam9000/kickstart-modular.nvim](https://github.com/dam9000/kickstart-modular.nvim/tree/master) to make it modular.*
+*This config is based on [nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim), a basic init.lua great for the first time using neovim.*
+*And a fork of [dam9000/kickstart-modular.nvim](https://github.com/dam9000/kickstart-modular.nvim/tree/master) that makes kickstart.nvim modular.*
 
 A couple of additional plugins have been added:
 * LazyGit (GUI for git)
-* Harpoon (File hopping)
-* Aerial (Symbol Outline)
+* Harpoon (File hoping)
+* Aerial (Symbol outline)
 * Oil (Directory editing)
 
 And a bunch of my own keymaps!

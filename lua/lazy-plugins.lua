@@ -21,12 +21,16 @@ require('lazy').setup({
 
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
-  {
-    'sainnhe/sonokai',
-    config = function()
-      vim.cmd.colorscheme 'sonokai'
-    end,
-  },
+  -- color scheme from folke
+  require 'plugins/tokyonight',
+
+  -- another color scheme
+  -- {
+  --   'sainnhe/sonokai',
+  --   config = function()
+  --     vim.cmd.colorscheme 'sonokai'
+  --   end,
+  -- },
 
   {
     'akinsho/bufferline.nvim',
@@ -61,24 +65,31 @@ require('lazy').setup({
   -- vim-like file tree for navigation and editing
   require 'plugins/oil',
 
+  -- git diff on the sidebars
   require 'plugins/gitsigns',
 
+  -- shows existing keymaps
   require 'plugins/which-key',
 
+  -- legendary search functionality for... EVERYTHING
   require 'plugins/telescope',
 
+  -- collection of LSP configs
   require 'plugins/lspconfig',
 
+  -- formatter
   require 'plugins/conform',
 
+  -- autocompletion
   require 'plugins/cmp',
 
-  -- require 'plugins/tokyonight',
-
+  -- todos!
   require 'plugins/todo-comments',
 
+  -- collection of plugins, ex. statusline, surround
   require 'plugins/mini',
 
+  -- parser or building a syntax tree
   require 'plugins/treesitter',
 
   -- require 'kickstart.plugins.debug',
