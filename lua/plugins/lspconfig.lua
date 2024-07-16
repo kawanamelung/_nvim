@@ -111,6 +111,9 @@ return {
         -- clangd = {},
         -- gopls = {},
         pyright = {},
+        cssls = {},
+        html = {},
+
         -- rust_analyzer = {},
 
         lua_ls = {

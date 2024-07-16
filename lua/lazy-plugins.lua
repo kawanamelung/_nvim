@@ -20,10 +20,12 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
 
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  'mbbill/undotree', -- Undo tree
 
   -- color scheme from folke
-  require 'plugins/tokyonight',
-
+  -- require 'plugins/tokyonight',
+  require 'plugins.copilot',
+  require 'plugins.kanagawa',
   -- another color scheme
   -- {
   --   'sainnhe/sonokai',
@@ -31,7 +33,6 @@ require('lazy').setup({
   --     vim.cmd.colorscheme 'sonokai'
   --   end,
   -- },
-
   {
     'akinsho/bufferline.nvim',
     version = '*',

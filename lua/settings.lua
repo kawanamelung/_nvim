@@ -59,7 +59,7 @@ vim.opt.scrolloff = 10
 vim.opt.hlsearch = true
 
 -- Hghlighting vertical separators
-vim.wo.winhighlight = true
+-- vim.wo.winhighlight = true
 
 -- column line only for python files
 vim.api.nvim_create_autocmd('BufWinEnter', {
@@ -68,4 +68,5 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
     vim.wo.colorcolumn = '80,72'
   end,
 })
+require('kanagawa').load 'wave'
 -- vim: ts=2 sts=2 sw=2 et

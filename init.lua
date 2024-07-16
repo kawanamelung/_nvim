@@ -14,8 +14,6 @@ vim.g.maplocalleader = ' '
 -- Set to true if you have a Nerd Font installed
 vim.g.have_nerd_font = true
 
--- [[ Vim Settings ]]
-require 'settings'
 
 -- [[ Basic Keymaps ]]
 require 'keymaps'
@@ -25,6 +23,9 @@ require 'lazy-plugins'
 
 -- [[ Complex Keymaps]]
 require 'keymaps_with_functions'
+
+-- [[ Vim Settings ]]
+require 'settings'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

@@ -1,3 +1,6 @@
+-- vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+-- require('Undotree').load 'wave'
+-- g:undotree_WindowLayout = 1
 local group = vim.api.nvim_create_augroup('jump_last_position', { clear = true })
 vim.api.nvim_create_autocmd('BufReadPost', {
   callback = function()
@@ -7,6 +10,16 @@ vim.api.nvim_create_autocmd('BufReadPost', {
     end
   end,
   group = group,
+})
+
+-- Remove whitespace on save
+vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
+  pattern = { '*' },
+  callback = function()
+    local save_cursor = vim.fn.getpos '.'
+    vim.cmd [[%s/\s\+$//e]]
+    vim.fn.setpos('.', save_cursor)
+  end,
 })
 -- Oil at workspace directory
 vim.keymap.set('n', '<leader>f', function()

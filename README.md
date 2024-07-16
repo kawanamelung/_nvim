@@ -28,6 +28,8 @@ External Requirements:
 - A [Nerd Font](https://www.nerdfonts.com/): optional, provides various icons
   - if you have it set `vim.g.have_nerd_font` in `init.lua` to true
 - [LazyGit](https://github.com/jesseduffield/lazygit)
+- Ripgrep 'brew install ripgrep' for Telescope Live Grep
+- 
 
 > **NOTE**
 > See [Windows Installation](#Windows-Installation) to double check any additional Windows notes
