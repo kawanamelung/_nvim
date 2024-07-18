@@ -110,9 +110,22 @@ return {
       local servers = {
         -- clangd = {},
         -- gopls = {},
-        pyright = {},
-        cssls = {},
-        html = {},
+        -- pyright = {},
+        basedpyright = {
+          settings = {
+            basedpyright = {
+              analysis = {
+                autoSearchPaths = true,
+                diagnosticMode = 'openFilesOnly',
+                useLibraryCodeForTypes = true,
+                typeCheckingMode = 'off',
+                autoImportCompletions = true,
+              },
+            },
+          },
+        },
+        -- cssls = {},
+        -- html = {},
 
         -- rust_analyzer = {},
 
