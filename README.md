@@ -6,10 +6,10 @@
 *And a fork of [dam9000/kickstart-modular.nvim](https://github.com/dam9000/kickstart-modular.nvim/tree/master) that makes kickstart.nvim modular.*
 
 A couple of additional plugins have been added:
-* LazyGit (GUI for git)
+* Oil (Directory editing)
 * Harpoon (File hopping)
 * Aerial (Symbol outline)
-* Oil (Directory editing)
+* LazyGit (GUI for git)
 
 And a bunch of my own keymaps!
 
@@ -27,6 +27,8 @@ External Requirements:
 - [ripgrep](https://github.com/BurntSushi/ripgrep#installation) 'brew install ripgrep' for Telescope Live Grep
 - A [Nerd Font](https://www.nerdfonts.com/): optional, provides various icons
   - if you have it set `vim.g.have_nerd_font` in `init.lua` to true
+  - FiraMono Nerd Font [download](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraMono.zip)
+
 - [LazyGit](https://github.com/jesseduffield/lazygit)
 
 > **NOTE**
