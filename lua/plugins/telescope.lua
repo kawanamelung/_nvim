@@ -109,7 +109,11 @@ return {
 
       -- Shortcut for searching your .dotfiles
       vim.keymap.set('n', '<leader>.', function()
-        builtin.find_files { cwd = vim.fn.expand '~/.dotfiles' }
+        builtin.find_files {
+          cwd = vim.fn.expand '~/.dotfiles',
+          hidden = true,
+          file_ignore_patterns = { '.git', 'nvim' },
+        }
       end, { desc = '[S]earch [.]dotfiles files' })
     end,
   },
