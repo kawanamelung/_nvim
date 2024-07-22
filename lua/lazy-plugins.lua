@@ -22,6 +22,7 @@ require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   'mbbill/undotree', -- Undo tree
 
+  require 'plugins/dashboard',
   -- color scheme from folke
   -- require 'plugins/tokyonight',
   require 'plugins.copilot',

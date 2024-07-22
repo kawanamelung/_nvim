@@ -70,3 +70,4 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
 })
 require('kanagawa').load 'wave'
 -- vim: ts=2 sts=2 sw=2 et
+vim.api.nvim_set_hl(0, 'DashboardHeader', { link = 'Normal' })
