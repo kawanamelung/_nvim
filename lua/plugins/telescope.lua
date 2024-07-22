@@ -106,6 +106,11 @@ return {
       vim.keymap.set('n', '<leader>sn', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
       end, { desc = '[S]earch [N]eovim files' })
+
+      -- Shortcut for searching your .dotfiles
+      vim.keymap.set('n', '<leader>.', function()
+        builtin.find_files { cwd = vim.fn.expand '~/.dotfiles' }
+      end, { desc = '[S]earch [.]dotfiles files' })
     end,
   },
 }
