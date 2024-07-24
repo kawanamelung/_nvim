@@ -40,8 +40,11 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', '<leader>o', ':normal! o<CR>', { noremap = true, silent = true, desc = 'insert line below' })
 vim.keymap.set('n', '<leader>O', ':normal! O<CR>', { noremap = true, silent = true, desc = 'insert line above' })
 
+-- delete after equal sign on line
+vim.keymap.set('n', 'd=', '<Esc>:normal! 0f=ld$<CR>a ', { silent = true, desc = 'delete after first equal sign' })
+
 -- change after equal sign on line
-vim.keymap.set('n', 'd=', '<Esc>:normal! 0f=ld$<CR>a ', { silent = true, desc = 'change after first equal sign' })
+vim.keymap.set('n', 'c=', '<Esc>:normal! 0f=ld$<CR>a ', { silent = true, desc = 'change after first equal sign' })
 
 -- substitute word under cursor with confirmation (y/n)
 vim.keymap.set('n', '<leader>rc', [[:%s/\<<C-r><C-w>\>//gc<Left><Left><Left>]], { desc = '[R]ename with [C]onfirmation.' })
