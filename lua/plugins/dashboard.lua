@@ -1,4 +1,5 @@
-return {{
+return {
+  {
     'nvimdev/dashboard-nvim',
     lazy = false, -- As https://github.com/nvimdev/dashboard-nvim/pull/450, dashboard-nvim shouldn't be lazy-loaded to properly handle stdin.
     opts = function()
@@ -12,9 +13,10 @@ return {{
         handle:close()
         return result
       end
+      local width = tostring(vim.api.nvim_win_get_width(0) - 12)
+      local height = tostring(math.floor(vim.api.nvim_win_get_height(0) / 2))
 
-      local python_command = 'neovim_trees.py'
-
+      local python_command = 'neovim_trees.py --width ' .. width .. ' --height ' .. height
       local result = get_python_stdout(python_command)
 
       local opts = {
@@ -35,5 +37,5 @@ return {{
 
       return opts
     end,
-},
+  },
 }
