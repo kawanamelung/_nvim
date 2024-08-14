@@ -71,7 +71,7 @@ require('lazy').setup({
   require 'plugins/gitsigns',
 
   -- shows existing keymaps
-  require 'plugins/which-key',
+  -- require 'plugins/which-key',
 
   -- legendary search functionality for... EVERYTHING
   require 'plugins/telescope',
