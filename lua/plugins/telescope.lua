@@ -62,7 +62,12 @@ return {
         --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
         --   },
         -- },
-        -- pickers = {}
+        pickers = {
+          find_files = {
+            -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
+            find_command = { 'rg', '--files', '--hidden', '--glob', '!**/.git/*' },
+          },
+        },
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
@@ -74,6 +79,7 @@ return {
 
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
+
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
       vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
       vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
@@ -108,10 +114,9 @@ return {
       end, { desc = '[S]earch [N]eovim files' })
 
       -- Shortcut for searching your .dotfiles
-      vim.keymap.set('n', '<leader>.', function()
+      vim.keymap.set('n', '<leader>sd', function()
         builtin.find_files {
           cwd = vim.fn.expand '~/.dotfiles',
-          hidden = true,
           file_ignore_patterns = { '.git', 'nvim' },
         }
       end, { desc = '[S]earch [.]dotfiles files' })

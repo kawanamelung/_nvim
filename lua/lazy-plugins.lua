@@ -56,8 +56,6 @@ require('lazy').setup({
     },
   },
 
-  -- lazy git
-  require 'plugins/lazygit',
   -- file swapping
   require 'plugins/harpoon',
 
