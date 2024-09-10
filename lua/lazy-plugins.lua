@@ -46,15 +46,15 @@ require('lazy').setup({
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} }, -- Use `opts = {}` to force a plugin to be loaded.
 
-  {
-    'lukas-reineke/virt-column.nvim',
-    config = true,
-    exclude = {
-      filetypes = {
-        'python',
-      },
-    },
-  },
+  -- {
+  --   'lukas-reineke/virt-column.nvim',
+  --   config = true,
+  --   exclude = {
+  --     filetypes = {
+  --       'python',
+  --     },
+  --   },
+  -- },
 
   -- file swapping
   require 'plugins/harpoon',

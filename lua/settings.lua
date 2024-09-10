@@ -61,13 +61,13 @@ vim.opt.hlsearch = true
 -- Hghlighting vertical separators
 -- vim.wo.winhighlight = true
 
--- column line only for python files
-vim.api.nvim_create_autocmd('BufWinEnter', {
-  pattern = '*.py',
-  callback = function()
-    vim.wo.colorcolumn = '80,72'
-  end,
-})
+-- -- column line only for python files
+-- vim.api.nvim_create_autocmd('BufWinEnter', {
+--   pattern = '*.py',
+--   callback = function()
+--     vim.wo.colorcolumn = '80,72'
+--   end,
+-- })
 require('kanagawa').load 'wave'
--- vim: ts=2 sts=2 sw=2 et
 vim.api.nvim_set_hl(0, 'DashboardHeader', { link = 'Normal' })
+-- vim: ts=2 sts=2 sw=2 et
